@@ -1,19 +1,12 @@
-[![author](https://img.shields.io/badge/Author-Francisco&nbsp;Bustamante-red.svg)](https://www.linkedin.com/in/flsbustamante/)
-[![](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
-
 # Segmentação de clientes de um supermercado
 
 Um supermercado, através de cartões de fidelidade, possui alguns dados básicos sobre seus clientes, como idade, gênero, renda anual e pontuação de gastos. Tal pontuação é algo que o supermercado atribui ao cliente com base em parâmetros definidos, como comportamento do cliente e dados de compra. O supermercado deseja entender melhor seus clientes, de modo a formular estratégias de negócios, e para isso contratou um cientista de dados para realizar uma segmentação dos clientes.
 
-![segmentacao_pca_3d](..relatorios/imagens/grafico3d.png)
+![segmentacao_pca_3d](relatorios/imagens/grafico3d.png)
 
 [Link original para o dataset](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
 
 Projeto de clusterização utilizando dados de clientes de supermercado utilizando bibliotecas como scikit learn, pandas, matplotlib...
-
-<p align="center"> 
-  <a href="https://www.linkedin.com/in/flsbustamante" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-</p>
 
 ## Objetivos
 
@@ -61,9 +54,9 @@ O dataset utilizado é o contido no arquivo [`Mall_Customers.csv`](dados/Mall_Cu
 
 Com o pipeline realizando pré-processamento, PCA e K-Means, a base foi segmentada em 5 clusters, como mostrado nas figuras abaixo:
 
-![pairplot](../relatorios/imagens/pairplot.png)
+![pairplot](relatorios/imagens/pairplot.png)
 
-![boxplot](../relatorios/imagens/boxplot.png)
+![boxplot](relatorios/imagens/boxplot.png)
 
 * **Cluster 0**: Pontuação de gastos moderada, renda baixa, idade idoso.
 * **Cluster 1**: Pontuação de gastos moderada, renda baixa, idade jovem.
