@@ -1,86 +1,87 @@
-# Modelo de projeto de ciência de dados
+[![author](https://img.shields.io/badge/Author-Francisco&nbsp;Bustamante-red.svg)](https://www.linkedin.com/in/flsbustamante/)
+[![](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 
-Modelo de projeto de ciência de dados para ser utilizado como referência em projetos
-futuros. Desenvolvido por mim, [Francisco Bustamante](https://github.com/chicolucio),
-para alunos iniciantes em ciência de dados de meus cursos e mentorias.
+# Segmentação de clientes de um supermercado
 
-Inspiração: [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+Um supermercado, através de cartões de fidelidade, possui alguns dados básicos sobre seus clientes, como idade, gênero, renda anual e pontuação de gastos. Tal pontuação é algo que o supermercado atribui ao cliente com base em parâmetros definidos, como comportamento do cliente e dados de compra. O supermercado deseja entender melhor seus clientes, de modo a formular estratégias de negócios, e para isso contratou um cientista de dados para realizar uma segmentação dos clientes.
 
-Clique no botão **Use this template** para criar um novo repositório com base neste modelo.
+![segmentacao_pca_3d](..relatorios/imagens/grafico3d.png)
 
-## Organização do projeto
+[Link original para o dataset](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
+
+Projeto de clusterização utilizando dados de clientes de supermercado utilizando bibliotecas como scikit learn, pandas, matplotlib...
+
+<p align="center"> 
+  <a href="https://www.linkedin.com/in/flsbustamante" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</p>
+
+## Objetivos
+
+O objetivo deste projeto é realizar a segmentação de clientes de um supermercado utilizando técnicas de aprendizado não supervisionado, com foco em identificar grupos com comportamentos de consumo semelhantes.
+
+Por meio da aplicação do algoritmo K-Means, buscou-se descobrir padrões ocultos nos dados e compreender melhor o perfil dos consumidores — considerando variáveis como idade, renda anual e pontuação de gastos.
+
+Com esses insights, o supermercado pode:
+
+* Desenvolver estratégias de marketing personalizadas;
+
+* Criar campanhas direcionadas a diferentes perfis de clientes;
+
+* Melhorar a fidelização e satisfação dos consumidores;
+
+* Otimizar o uso de recursos em ações promocionais e programas de benefícios.
+
+Em suma, o projeto visa transformar dados brutos em informações estratégicas, auxiliando na tomada de decisões baseadas em dados (Data-Driven Decision Making) e na compreensão do comportamento do cliente.
+
+## Estrutura do repositório
+
+O repositório está estruturado da seguinte forma:
 
 ```
-├── .env               <- Arquivo de variáveis de ambiente (não versionar)
-├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git
-├── ambiente.yml       <- O arquivo de requisitos para reproduzir o ambiente de análise
-├── LICENSE            <- Licença de código aberto se uma for escolhida
-├── README.md          <- README principal para desenvolvedores que usam este projeto.
-|
-├── dados              <- Arquivos de dados para o projeto.
-|
-├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
-|
-├── notebooks          <- Cadernos Jupyter. A convenção de nomenclatura é um número (para ordenação),
-│                         as iniciais do criador e uma descrição curta separada por `-`, por exemplo
-│                         `01-fb-exploracao-inicial-de-dados`.
-│
-|   └──src             <- Código-fonte para uso neste projeto.
-|      │
-|      ├── __init__.py  <- Torna um módulo Python
-|      ├── config.py    <- Configurações básicas do projeto
-|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
-|
-├── referencias        <- Dicionários de dados, manuais e todos os outros materiais explicativos.
-|
-├── relatorios         <- Análises geradas em HTML, PDF, LaTeX, etc.
-│   └── imagens        <- Gráficos e figuras gerados para serem usados em relatórios
+├── dados
+├── modelos
+├── notebooks
+├── relatorios / imagens
 ```
 
-## Configuração do ambiente
+- Na pasta `dados` estão os dados utilizados no projeto. O arquivo `Mall_Customers.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
+- Na pasta `imagens` estão as imagens utilizadas neste README.
+- Na pasta `modelos` estão os modelos gerados durante o projeto. 
+- Na pasta `notebooks` estão os notebooks com o desenvolvimento do projeto.
 
-1. Faça o clone do repositório que será criado a partir deste modelo.
+## Detalhes do dataset utilizado e resumo dos resultados
 
-    ```bash
-    git clone ENDERECO_DO_REPOSITORIO
-    ```
+O dataset utilizado é o contido no arquivo [`Mall_Customers.csv`](dados/Mall_Customers.csv), que contém os seguintes dados:
 
-2. Crie um ambiente virtual para o seu projeto utilizando o gerenciador de ambientes de sua preferência.
+- `CustomerID`: ID do cliente
+- `Gender`: sexo do cliente
+- `Age`: idade do cliente
+- `Annual Income (k$)`: renda anual do cliente
+- `Spending Score (1-100)`: pontuação de gastos do cliente
 
-    a. Caso esteja utilizando o `conda`, exporte as dependências do ambiente para o arquivo `ambiente.yml`:
+Com o pipeline realizando pré-processamento, PCA e K-Means, a base foi segmentada em 5 clusters, como mostrado nas figuras abaixo:
 
-      ```bash
-      conda env export > ambiente.yml
-      ```
+![pairplot](../relatorios/imagens/pairplot.png)
 
-    b. Caso esteja utilizando outro gerenciador de ambientes, exporte as dependências
-    para o arquivo `requirements.txt` ou outro formato de sua preferência. Adicione o
-    arquivo ao controle de versão, removendo o arquivo `ambiente.yml`.
+![boxplot](../relatorios/imagens/boxplot.png)
 
-3. Verifique o arquivo `notebooks/01-fb-exemplo.ipynb` para exemplos
-de uso do código.
-4. Renomeie o arquivo `notebooks/01-fb-exemplo.ipynb` para um nome
-mais apropriado ao seu projeto. E siga a convenção de nomenclatura para os demais
-notebooks.
-5. Remova arquivos de exemplo e adicione os arquivos de dados e notebooks do seu
-projeto.
-6. Verifique o arquivo `notebooks/src/config.py` para configurações básicas do projeto.
-Modifique conforme necessário, adicionando ou removendo caminhos de arquivos e
-diretórios.
-7. Atualize o arquivo `referencias/01_dicionario_de_dados.md` com o dicionário de dados
-do seu projeto.
-8. Atualize o `README.md` com informações sobre o seu projeto.
-9. Adicione uma licença ao projeto. Clique
-[aqui](https://docs.github.com/pt/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
-se precisar de ajuda para escolher uma licença.
-10. Renomeie o arquivo `.env.exemplo` para `.env`
-11. Adicione variáveis de ambiente sensíveis ao arquivo `.env`.
+* **Cluster 0**: Pontuação de gastos moderada, renda baixa, idade idoso.
+* **Cluster 1**: Pontuação de gastos moderada, renda baixa, idade jovem.
+* **Cluster 2**: Pontuação de gastos baixa, renda alta, idade moderada.
+* **Cluster 3**: Pontuação de gastos alta, renda baixa, idade jovem.
+* **Cluster 4**: Pontuação de gastos alta, renda alta, idade jovem.
 
-Por padrão, o arquivo `.gitignore` já está configurado para ignorar arquivos de dados e
-arquivos de Notebook (para aqueles que usam ferramentas como
-[Jupytext](https://jupytext.readthedocs.io/en/latest/) e similares). Adicione ou remova
-outros arquivos e diretórios do `.gitignore` conforme necessário. Caso deseje adicionar
-forçadamente um Notebook ao controle de versão, faça um commit forçado com o
-comando `git add --force NOME_DO_ARQUIVO.ipynb`.
 
-Para mais informações sobre como usar Git e GitHub, [clique aqui](https://cienciaprogramada.com.br/2021/09/guia-definitivo-git-github/). Sobre ambientes virtuais, [clique aqui](https://cienciaprogramada.com.br/2020/08/ambiente-virtual-projeto-python/).
+## Como reproduzir o projeto
+
+O projeto foi desenvolvido utilizando o Python 3.11.4. Para reproduzir o projeto, crie um ambiente virtual com o Conda, ou ferramenta similar, com o Python 3.11.4 e instale as bibliotecas abaixo:
+
+| Biblioteca   | Versão |
+| ------------ | ------ |
+| Matplotlib   | 3.7.1  |
+| NumPy        | 1.24.3 |
+| Pandas       | 1.5.3  |
+| Scikit-Learn | 1.3.0  |
+| Seaborn      | 0.12.2 |
+
+Essas são as bibliotecas principais utilizadas no projeto. O relatório foi gerado com a biblioteca [ydata-profiling](https://github.com/ydataai/ydata-profiling), instale-a se quiser reproduzir o relatório. Para ter um gráfico em 3 dimensões interativo, instale a biblioteca [ipympl](https://matplotlib.org/ipympl/).
