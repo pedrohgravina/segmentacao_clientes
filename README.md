@@ -40,7 +40,8 @@ O repositório está estruturado da seguinte forma:
 - Na pasta `dados` estão os dados utilizados no projeto. O arquivo `Mall_Customers.csv` é o dataset utilizado originalmente. Os demais arquivos são os datasets gerados durante o projeto.
 - Na pasta `imagens` estão as imagens utilizadas neste README.
 - Na pasta `modelos` estão os modelos gerados durante o projeto. 
-- Na pasta `notebooks` estão os notebooks com o desenvolvimento do projeto.
+- Na pasta `notebooks` estão os notebooks com o desenvolvimento do projeto: 02-segmentacao.ipynb (Construção do modelo) [Análise exploratória](notebooks/01-eda.ipynb) [Criação do modelo](notebooks/02-segmentacao.ipynb)
+
 
 ## Detalhes do dataset utilizado e resumo dos resultados
 
